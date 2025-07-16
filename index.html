@@ -75,7 +75,7 @@
         
         /* Hero Section */
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://raw.githubusercontent.com/bimal-bp/Label-Pack/refs/heads/main/bottle-labeling-machine-1000x1000.webp');
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/bottle-labeling-machine-1000x1000.webp');
             background-size: cover;
             background-position: center;
             height: 500px;
@@ -108,11 +108,29 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
         .btn:hover {
             background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #f39c12;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: #f39c12;
         }
         
         /* Services Section */
@@ -155,18 +173,34 @@
             padding: 30px;
             border-radius: 5px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: all 0.3s;
             text-align: center;
+            border-top: 4px solid transparent;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-top-color: #f39c12;
         }
         
         .service-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
             color: #1a5276;
+        }
+        
+        /* AI Badge */
+        .ai-badge {
+            background-color: #1a5276;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
         }
         
         /* Image Gallery Section */
@@ -323,13 +357,23 @@
         }
         
         .contact-form input,
-        .contact-form textarea {
+        .contact-form textarea,
+        .contact-form select {
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
             border: 1px solid #ddd;
             border-radius: 5px;
             background-color: rgba(255,255,255,0.9);
+            transition: all 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: #f39c12;
+            box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.3);
         }
         
         .contact-form button {
@@ -339,12 +383,15 @@
             padding: 12px 30px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
             font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
         .contact-form button:hover {
             background-color: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
         
         /* Floating Action Button */
@@ -365,6 +412,19 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(243, 156, 18, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(243, 156, 18, 0);
+            }
         }
         
         .float-btn:hover {
@@ -385,11 +445,13 @@
             border-radius: 5px;
             white-space: nowrap;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
         .float-btn:hover .float-btn-text {
             opacity: 1;
+            right: 80px;
         }
         
         /* Footer */
@@ -408,11 +470,13 @@
             color: white;
             margin: 0 10px;
             font-size: 20px;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            display: inline-block;
         }
         
         .social-links a:hover {
             color: #f39c12;
+            transform: translateY(-3px);
         }
         
         /* Responsive Design */
@@ -441,6 +505,17 @@
             .team-grid {
                 grid-template-columns: 1fr 1fr;
             }
+            
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 10px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -464,7 +539,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="wheel-logo.png" alt="Wheel Label & Pack Logo">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/ChatGPT%20Image%20Jul%2016%2C%202025%2C%2011_46_27%20PM.png" alt="Wheel Label & Pack Logo">
                     Wheel Label & Pack
                 </div>
                 <ul class="nav-links">
@@ -485,7 +560,10 @@
             <div class="hero-content">
                 <h1>Your Trusted Packaging Partner in Mumbai</h1>
                 <p>Premium labeling and packing solutions tailored to your brand's needs since 2012</p>
-                <a href="#contact" class="btn">Get a Free Quote Today</a>
+                <div class="btn-group">
+                    <a href="#contact" class="btn">Get a Free Quote Today</a>
+                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                </div>
             </div>
         </div>
     </section>
@@ -512,6 +590,21 @@
                     <h3>Corrugated Boxes</h3>
                     <p>Custom-designed shipping and retail boxes with high-quality printing and structural integrity.</p>
                 </div>
+                <div class="service-card">
+                    <i class="fas fa-robot fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
+                    <h3>AI-Powered Design <span class="ai-badge">NEW</span></h3>
+                    <p>Our AI tools help create optimal packaging designs based on your product specifications and market trends.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-brain fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
+                    <h3>Smart Labeling <span class="ai-badge">COMING SOON</span></h3>
+                    <p>AI-assisted labeling solutions that automatically adjust to product variations and regulatory requirements.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
+                    <h3>Packaging Analytics</h3>
+                    <p>Data-driven insights to optimize your packaging for cost, sustainability, and consumer appeal.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -525,13 +618,22 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://github.com/bimal-bp/Label-Pack/blob/main/bottle-labeling-machine-1000x1000.webp" alt="Bottle Labeling Machine">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/bottle-labeling-machine-1000x1000.webp" alt="Bottle Labeling Machine">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://github.com/bimal-bp/Label-Pack/blob/main/image.png" alt="Packaging Solution">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/image.png" alt="Packaging Solution">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/refs/heads/main/bottle-labeling-machine-1000x1000.webp" alt="High-Speed Labeling">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/automatic-water-bottle-labeling-machine7.webp" alt="High-Speed Labeling Machine">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/bottle-labeling-machine-1000x1000.webp" alt="Labeling Process">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/image.png" alt="Finished Product">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/automatic-water-bottle-labeling-machine7.webp" alt="Production Line">
                 </div>
             </div>
         </div>
@@ -550,11 +652,13 @@
                         <li>Digital printing capabilities for short runs</li>
                         <li>Quality control lab with spectrophotometers</li>
                         <li>Climate-controlled storage for sensitive materials</li>
+                        <li>AI-powered quality inspection systems</li>
                     </ul>
                     <p style="margin-top: 15px;">Our facility is ISO 9001:2015 certified and follows strict GMP guidelines for all pharmaceutical packaging.</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px; display: inline-block;">Schedule a Facility Tour</a>
                 </div>
                 <div class="facility-image">
-                    <img src="facility-image.jpg" alt="Wheel Label & Pack Facility">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/bottle-labeling-machine-1000x1000.webp" alt="Wheel Label & Pack Facility">
                 </div>
             </div>
         </div>
@@ -569,34 +673,40 @@
             </div>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="team1.jpg" alt="Rajesh Sharma">
+                    <img src="https://via.placeholder.com/150" alt="Rajesh Sharma">
                     <h3>Rajesh Sharma</h3>
                     <p class="position">Founder & CEO</p>
                     <p>25+ years in packaging industry</p>
                 </div>
                 <div class="team-member">
-                    <img src="team2.jpg" alt="Priya Patel">
+                    <img src="https://via.placeholder.com/150" alt="Priya Patel">
                     <h3>Priya Patel</h3>
                     <p class="position">Operations Head</p>
                     <p>Quality control specialist</p>
                 </div>
                 <div class="team-member">
-                    <img src="team3.jpg" alt="Amit Desai">
+                    <img src="https://via.placeholder.com/150" alt="Amit Desai">
                     <h3>Amit Desai</h3>
                     <p class="position">Sales Director</p>
                     <p>Client relationship expert</p>
                 </div>
                 <div class="team-member">
-                    <img src="team4.jpg" alt="Neha Gupta">
+                    <img src="https://via.placeholder.com/150" alt="Neha Gupta">
                     <h3>Neha Gupta</h3>
                     <p class="position">Production Manager</p>
                     <p>Process optimization specialist</p>
                 </div>
                 <div class="team-member">
-                    <img src="team5.jpg" alt="Vikram Joshi">
+                    <img src="https://via.placeholder.com/150" alt="Vikram Joshi">
                     <h3>Vikram Joshi</h3>
                     <p class="position">Design Head</p>
                     <p>Creative packaging solutions</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Sanjay Mehta">
+                    <h3>Sanjay Mehta</h3>
+                    <p class="position">AI Technology Lead</p>
+                    <p>Smart packaging innovations</p>
                 </div>
             </div>
         </div>
@@ -607,6 +717,7 @@
         <div class="container">
             <div class="section-title">
                 <h2 style="color: white;">Contact Us</h2>
+                <p style="color: #f39c12; margin-top: 15px;">Ready to discuss your packaging needs? Get in touch today!</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
@@ -619,21 +730,30 @@
                     
                     <h3 style="margin-top: 30px;">Factory Address</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Plot No. 45, MIDC Industrial Zone, Near Saki Naka Metro Station, Mumbai - 400072</p>
+                    
+                    <div class="social-links" style="margin-top: 30px;">
+                        <a href="#"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        <a href="#"><i class="fas fa-phone-alt fa-2x"></i></a>
+                        <a href="#"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
                 </div>
                 <div class="contact-form">
                     <form action="#" method="POST">
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <input type="tel" name="phone" placeholder="Your Phone Number" required>
-                        <select name="service" style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; background-color: rgba(255,255,255,0.9);">
+                        <select name="service" required>
                             <option value="">Select Service Interested In</option>
                             <option value="label">Label Printing</option>
                             <option value="flexible">Flexible Packaging</option>
                             <option value="boxes">Corrugated Boxes</option>
+                            <option value="ai">AI Packaging Solutions</option>
                             <option value="other">Other</option>
                         </select>
                         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                        <button type="submit">Send Message</button>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
                     </form>
                 </div>
             </div>
@@ -643,12 +763,16 @@
     <!-- Floating Action Button -->
     <div class="float-btn" onclick="location.href='#contact'">
         <i class="fas fa-comment-dots"></i>
-        <span class="float-btn-text">Talk to Us</span>
+        <span class="float-btn-text">Quick Inquiry</span>
     </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
+            <div class="logo" style="justify-content: center; margin-bottom: 20px;">
+                <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/ChatGPT%20Image%20Jul%2016%2C%202025%2C%2011_46_27%20PM.png" alt="Wheel Label & Pack Logo" style="height: 50px;">
+                <span style="font-size: 24px;">Wheel Label & Pack</span>
+            </div>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -658,6 +782,7 @@
             </div>
             <p>&copy; 2023 Wheel Label & Pack. All Rights Reserved.</p>
             <p style="margin-top: 10px; font-size: 14px;">GST No: 27AAECW1234F1ZW</p>
+            <p style="margin-top: 10px; font-size: 12px; color: #aaa;">Innovating Packaging Solutions with AI Technology</p>
         </div>
     </footer>
 </body>
