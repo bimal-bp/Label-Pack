@@ -250,10 +250,43 @@
             opacity: 1;
         }
         
+        /* Applications Section */
+        .applications {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .application-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .application-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .application-card i {
+            font-size: 36px;
+            color: #1a5276;
+            margin-bottom: 15px;
+        }
+        
         /* Facility Section */
         .facility {
             padding: 80px 0;
-            background-color: #f9f9f9;
+            background-color: white;
         }
         
         .facility-content {
@@ -499,7 +532,7 @@
             }
             
             .gallery-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
             
             .team-grid {
@@ -519,7 +552,8 @@
         }
         
         @media (max-width: 480px) {
-            .team-grid {
+            .team-grid,
+            .gallery-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -544,10 +578,9 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#applications">Applications</a></li>
                     <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#facility">Facility</a></li>
-                    <li><a href="#team">Team</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -562,48 +595,110 @@
                 <p>Premium labeling and packing solutions tailored to your brand's needs since 2012</p>
                 <div class="btn-group">
                     <a href="#contact" class="btn">Get a Free Quote Today</a>
-                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                    <a href="#products" class="btn btn-outline">Explore Products</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- Products Section -->
+    <section class="services" id="products">
         <div class="container">
             <div class="section-title">
-                <h2>Our Services</h2>
+                <h2>Our Products</h2>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-tags fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
-                    <h3>Custom Label Printing</h3>
-                    <p>High-quality labels with various materials including paper, vinyl, and polyester with multiple finish options.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-box-open fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
-                    <h3>Flexible Packaging</h3>
-                    <p>Stand-up pouches, flat pouches, and roll stock for food, pharmaceuticals, and consumer goods.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-box fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
-                    <h3>Corrugated Boxes</h3>
-                    <p>Custom-designed shipping and retail boxes with high-quality printing and structural integrity.</p>
-                </div>
-                <div class="service-card">
                     <i class="fas fa-robot fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
-                    <h3>AI-Powered Design <span class="ai-badge">NEW</span></h3>
-                    <p>Our AI tools help create optimal packaging designs based on your product specifications and market trends.</p>
+                    <h3>Automatic Labelling Machines</h3>
+                    <p>High-speed, precision labeling solutions for various container types and sizes.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-brain fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
-                    <h3>Smart Labeling <span class="ai-badge">COMING SOON</span></h3>
-                    <p>AI-assisted labeling solutions that automatically adjust to product variations and regulatory requirements.</p>
+                    <i class="fas fa-wine-bottle fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
+                    <h3>Bottle Labelling Machines</h3>
+                    <p>Specialized equipment for perfect label application on bottles of all shapes.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-chart-line fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
-                    <h3>Packaging Analytics</h3>
-                    <p>Data-driven insights to optimize your packaging for cost, sustainability, and consumer appeal.</p>
+                    <i class="fas fa-tags fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
+                    <h3>BOPP Labelling Machines</h3>
+                    <p>Machines designed specifically for BOPP label applications.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cogs fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
+                    <h3>Customised Solutions</h3>
+                    <p>Tailored labeling systems designed for your specific requirements.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-print fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
+                    <h3>Print & Apply Machines</h3>
+                    <p>Integrated systems that print and apply labels in one seamless operation.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-adjust fa-3x" style="color: #1a5276; margin-bottom: 15px;"></i>
+                    <h3>Semi Automatic Labelling Machines</h3>
+                    <p>Cost-effective solutions for businesses with moderate production needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="applications" id="applications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Applications</h2>
+                <p style="color: #666; margin-top: 15px;">Specialized labeling solutions for various needs</p>
+            </div>
+            <div class="applications-grid">
+                <div class="application-card">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Front & Back Labeling</h3>
+                    <p>Simultaneous application of labels on both sides of your product</p>
+                </div>
+                <div class="application-card">
+                    <i class="fas fa-redo"></i>
+                    <h3>Wraparound Labeling</h3>
+                    <p>Full circumferential label application for cylindrical containers</p>
+                </div>
+                <div class="application-card">
+                    <i class="fas fa-tag"></i>
+                    <h3>BOPP Labeling</h3>
+                    <p>Specialized application of Biaxially Oriented Polypropylene labels</p>
+                </div>
+                <div class="application-card">
+                    <i class="fas fa-sync"></i>
+                    <h3>Rotary Labeling</h3>
+                    <p>High-speed rotary application for round containers</p>
+                </div>
+                <div class="application-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Tamper Evident</h3>
+                    <p>Labeling solutions that show evidence of tampering</p>
+                </div>
+                <div class="application-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Hologram Labeling</h3>
+                    <p>Application of security hologram labels</p>
+                </div>
+                <div class="application-card">
+                    <i class="fas fa-arrow-up"></i>
+                    <h3>Top Labeling</h3>
+                    <p>Precise label application on the top surface of products</p>
+                </div>
+                <div class="application-card">
+                    <i class="fas fa-print"></i>
+                    <h3>Print & Apply</h3>
+                    <p>On-demand printing and application of labels</p>
+                </div>
+                <div class="application-card">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>Pouch Labeling</h3>
+                    <p>Specialized labeling solutions for flexible pouches</p>
+                </div>
+                <div class="application-card">
+                    <i class="fas fa-gift"></i>
+                    <h3>Promo Pack Labeling</h3>
+                    <p>Labeling solutions for promotional packaging</p>
                 </div>
             </div>
         </div>
@@ -627,13 +722,13 @@
                     <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/automatic-water-bottle-labeling-machine7.webp" alt="High-Speed Labeling Machine">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/bottle-labeling-machine-1000x1000.webp" alt="Labeling Process">
+                    <img src="https://via.placeholder.com/600x400?text=Custom+Labeling+Solution" alt="Custom Labeling Solution">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/image.png" alt="Finished Product">
+                    <img src="https://via.placeholder.com/600x400?text=Production+Line" alt="Production Line">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/automatic-water-bottle-labeling-machine7.webp" alt="Production Line">
+                    <img src="https://via.placeholder.com/600x400?text=Quality+Control" alt="Quality Control">
                 </div>
             </div>
         </div>
@@ -652,61 +747,12 @@
                         <li>Digital printing capabilities for short runs</li>
                         <li>Quality control lab with spectrophotometers</li>
                         <li>Climate-controlled storage for sensitive materials</li>
-                        <li>AI-powered quality inspection systems</li>
                     </ul>
                     <p style="margin-top: 15px;">Our facility is ISO 9001:2015 certified and follows strict GMP guidelines for all pharmaceutical packaging.</p>
                     <a href="#contact" class="btn" style="margin-top: 20px; display: inline-block;">Schedule a Facility Tour</a>
                 </div>
                 <div class="facility-image">
-                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/bottle-labeling-machine-1000x1000.webp" alt="Wheel Label & Pack Facility">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team" id="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Leadership Team</h2>
-                <p style="color: #666; margin-top: 15px;">Meet the experts behind Wheel Label & Pack</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Rajesh Sharma">
-                    <h3>Rajesh Sharma</h3>
-                    <p class="position">Founder & CEO</p>
-                    <p>25+ years in packaging industry</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Priya Patel">
-                    <h3>Priya Patel</h3>
-                    <p class="position">Operations Head</p>
-                    <p>Quality control specialist</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Amit Desai">
-                    <h3>Amit Desai</h3>
-                    <p class="position">Sales Director</p>
-                    <p>Client relationship expert</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Neha Gupta">
-                    <h3>Neha Gupta</h3>
-                    <p class="position">Production Manager</p>
-                    <p>Process optimization specialist</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Vikram Joshi">
-                    <h3>Vikram Joshi</h3>
-                    <p class="position">Design Head</p>
-                    <p>Creative packaging solutions</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Sanjay Mehta">
-                    <h3>Sanjay Mehta</h3>
-                    <p class="position">AI Technology Lead</p>
-                    <p>Smart packaging innovations</p>
+                    <img src="https://via.placeholder.com/800x500?text=Our+Facility" alt="Wheel Label & Pack Facility">
                 </div>
             </div>
         </div>
@@ -717,19 +763,15 @@
         <div class="container">
             <div class="section-title">
                 <h2 style="color: white;">Contact Us</h2>
-                <p style="color: #f39c12; margin-top: 15px;">Ready to discuss your packaging needs? Get in touch today!</p>
+                <p style="color: #f39c12; margin-top: 15px;">Ready to discuss your labeling needs? Get in touch today!</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Unit No. 12, Industrial Area, Saki Naka, Andheri East, Mumbai - 400072</p>
-                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 22 6789 1234</p>
-                    <p><i class="fas fa-mobile-alt"></i> <strong>Mobile:</strong> +91 98765 43210 (Sales), +91 98765 43211 (Support)</p>
-                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> sales@wheellabelpack.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Corporate Address:</strong> Plot No – R 247 TTC Industrial Area, Landmark – Behind Anthony Garage. M I D C Rabale, Navi Mumbai – 400701</p>
+                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 8657432498</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@wheellabelpack.com</p>
                     <p><i class="fas fa-clock"></i> <strong>Working Hours:</strong> Mon-Sat: 8:30 AM - 7:00 PM</p>
-                    
-                    <h3 style="margin-top: 30px;">Factory Address</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Plot No. 45, MIDC Industrial Zone, Near Saki Naka Metro Station, Mumbai - 400072</p>
                     
                     <div class="social-links" style="margin-top: 30px;">
                         <a href="#"><i class="fab fa-whatsapp fa-2x"></i></a>
@@ -743,12 +785,14 @@
                         <input type="email" name="email" placeholder="Your Email" required>
                         <input type="tel" name="phone" placeholder="Your Phone Number" required>
                         <select name="service" required>
-                            <option value="">Select Service Interested In</option>
-                            <option value="label">Label Printing</option>
-                            <option value="flexible">Flexible Packaging</option>
-                            <option value="boxes">Corrugated Boxes</option>
-                            <option value="ai">AI Packaging Solutions</option>
-                            <option value="other">Other</option>
+                            <option value="">Select Product Interested In</option>
+                            <option value="auto">Automatic Labelling Machines</option>
+                            <option value="bottle">Bottle Labelling Machines</option>
+                            <option value="bopp">BOPP Labelling Machines</option>
+                            <option value="custom">Customised Solutions</option>
+                            <option value="print">Print & Apply Machines</option>
+                            <option value="semi">Semi Automatic Labelling Machines</option>
+                            <option value="nonstop">Non Stop Labelling</option>
                         </select>
                         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                         <button type="submit">
@@ -782,7 +826,7 @@
             </div>
             <p>&copy; 2023 Wheel Label & Pack. All Rights Reserved.</p>
             <p style="margin-top: 10px; font-size: 14px;">GST No: 27AAECW1234F1ZW</p>
-            <p style="margin-top: 10px; font-size: 12px; color: #aaa;">Innovating Packaging Solutions with AI Technology</p>
+            <p style="margin-top: 10px; font-size: 12px; color: #aaa;">Innovating Labeling Solutions Since 2012</p>
         </div>
     </footer>
 </body>
