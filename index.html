@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -414,6 +413,56 @@
             font-style: normal;
         }
         
+        /* Team Structure Section */
+        .team-structure {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        
+        .team-structure h3 {
+            color: #1a5276;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .department {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #1a5276;
+        }
+        
+        .department h4 {
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+        
+        .department ul {
+            list-style-type: none;
+        }
+        
+        .department li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .department i {
+            margin-right: 8px;
+            color: #1a5276;
+            font-size: 12px;
+        }
+        
         /* Contact Section */
         .contact {
             padding: 80px 0;
@@ -821,6 +870,42 @@
                     <p class="achievement">Trained 15+ technicians</p>
                 </div>
             </div>
+            
+            <!-- Team Structure Section -->
+            <div class="team-structure">
+                <h3>Our Team Structure</h3>
+                <div class="structure-grid">
+                    <div class="department">
+                        <h4>Service Team</h4>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 11 Junior Service Engineers</li>
+                            <li><i class="fas fa-bolt"></i> 4 Electrical Engineers</li>
+                            <li><i class="fas fa-headset"></i> 1 Call Help Person</li>
+                        </ul>
+                    </div>
+                    <div class="department">
+                        <h4>Quality Control</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> 5 Quality Check Specialists</li>
+                        </ul>
+                    </div>
+                    <div class="department">
+                        <h4>Administration</h4>
+                        <ul>
+                            <li><i class="fas fa-shopping-cart"></i> 1 Purchasing Admin</li>
+                            <li><i class="fas fa-ticket-alt"></i> 1 Ticket Booking Admin</li>
+                            <li><i class="fas fa-user-tie"></i> 1 HR Manager</li>
+                        </ul>
+                    </div>
+                    <div class="department">
+                        <h4>Management</h4>
+                        <ul>
+                            <li><i class="fas fa-user-shield"></i> 2 Senior Managers</li>
+                            <li><i class="fas fa-chart-line"></i> 1 Operations Head</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -843,12 +928,6 @@
                 </div>
                 <div class="gallery-item">
                     <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/labeling-machine-working.jpg" alt="Labeling Machine in Operation">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/production-line-labeling.jpg" alt="Production Line Labeling">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/quality-control-check.jpg" alt="Quality Control Check">
                 </div>
             </div>
         </div>
@@ -886,7 +965,7 @@
                 <div class="video-grid">
                     <div class="video-card">
                         <div class="video-container">
-                            <video width="100%" height="100%" controls poster="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/video1-poster.jpg">
+                            <video width="100%" height="100%" controls autoplay loop muted playsinline poster="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/video1-poster.jpg">
                                 <source src="https://github.com/bimal-bp/Label-Pack/raw/main/machinevdo2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
