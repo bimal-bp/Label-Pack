@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -294,7 +295,8 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .video-container iframe {
+        .video-container iframe,
+        .video-container video {
             position: absolute;
             top: 0;
             left: 0;
@@ -351,7 +353,7 @@
         /* Team Section */
         .team {
             padding: 80px 0;
-            background-color: white;
+            background-color: #f9f9f9;
         }
         
         .team-grid {
@@ -397,6 +399,19 @@
             font-weight: bold;
             color: #f39c12;
             margin-bottom: 10px;
+        }
+        
+        .team-member .experience {
+            font-size: 14px;
+            color: #1a5276;
+            margin-bottom: 10px;
+        }
+        
+        .team-member .achievement {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            font-style: normal;
         }
         
         /* Contact Section */
@@ -624,6 +639,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#applications">Applications</a></li>
+                    <li><a href="#team">Team</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -748,6 +764,66 @@
         </div>
     </section>
 
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Expert Team</h2>
+                <p style="color: #666; margin-top: 15px;">Meet the professionals behind our success</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/60.jpg" alt="Senior Service Engineer">
+                    <h3>Rajesh Kumar</h3>
+                    <p class="position">Senior Service Engineer</p>
+                    <p class="experience">15+ years experience</p>
+                    <p>Specialized in automatic labeling systems</p>
+                    <p class="achievement">Serviced 344+ companies across India</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Service Coordinator">
+                    <h3>Priya Sharma</h3>
+                    <p class="position">Service Coordinator</p>
+                    <p class="experience">5+ years experience</p>
+                    <p>Customer service and support specialist</p>
+                    <p class="achievement">Managed 500+ service requests</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Service Engineer">
+                    <h3>Vikram Patel</h3>
+                    <p class="position">Service Engineer</p>
+                    <p class="experience">4+ years experience</p>
+                    <p>Expert in bottle labeling machines</p>
+                    <p class="achievement">Worked with 26 different industries</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/60.jpg" alt="Sales Head">
+                    <h3>Neha Gupta</h3>
+                    <p class="position">Sales Head</p>
+                    <p class="experience">7+ years experience</p>
+                    <p>Business development specialist</p>
+                    <p class="achievement">Expanded to 3 new markets</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="AI Tech Engineer">
+                    <h3>Arjun Mehta</h3>
+                    <p class="position">AI Tech Engineer</p>
+                    <p class="experience">1+ years experience</p>
+                    <p>Implementing smart solutions</p>
+                    <p class="achievement">Developed 2 proprietary systems</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Service Engineer">
+                    <h3>Sanjay Verma</h3>
+                    <p class="position">Service Engineer</p>
+                    <p class="experience">3+ years experience</p>
+                    <p>Specialized in BOPP labeling</p>
+                    <p class="achievement">Trained 15+ technicians</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Image Gallery Section -->
     <section class="gallery" id="gallery">
         <div class="container">
@@ -766,13 +842,13 @@
                     <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/automatic-water-bottle-labeling-machine7.webp" alt="High-Speed Labeling Machine">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400?text=Custom+Labeling+Solution" alt="Custom Labeling Solution">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/labeling-machine-working.jpg" alt="Labeling Machine in Operation">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400?text=Production+Line" alt="Production Line">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/production-line-labeling.jpg" alt="Production Line Labeling">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400?text=Quality+Control" alt="Quality Control">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/quality-control-check.jpg" alt="Quality Control Check">
                 </div>
             </div>
         </div>
@@ -800,7 +876,7 @@
                     <a href="#contact" class="btn" style="margin-top: 20px; display: inline-block;">Schedule a Facility Tour</a>
                 </div>
                 <div class="facility-image">
-                    <img src="https://via.placeholder.com/800x500?text=Our+Facility" alt="Wheel Label & Pack Facility">
+                    <img src="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/facility-image.jpg" alt="Wheel Label & Pack Facility">
                 </div>
             </div>
             
@@ -810,8 +886,8 @@
                 <div class="video-grid">
                     <div class="video-card">
                         <div class="video-container">
-                            <video width="100%" height="100%" controls>
-                                <source src="https://github.com/bimal-bp/Label-Pack/blob/main/machinevdo2.mp4?raw=true" type="video/mp4">
+                            <video width="100%" height="100%" controls poster="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/video1-poster.jpg">
+                                <source src="https://github.com/bimal-bp/Label-Pack/raw/main/machinevdo2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -820,8 +896,8 @@
                     </div>
                     <div class="video-card">
                         <div class="video-container">
-                            <video width="100%" height="100%" controls>
-                                <source src="https://github.com/bimal-bp/Label-Pack/blob/main/Machine%20vdo.mp4?raw=true" type="video/mp4">
+                            <video width="100%" height="100%" controls poster="https://raw.githubusercontent.com/bimal-bp/Label-Pack/main/video2-poster.jpg">
+                                <source src="https://github.com/bimal-bp/Label-Pack/raw/main/Machine%20vdo.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
