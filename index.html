@@ -292,8 +292,18 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s;
             text-align: center;
-            border-left: 4px solid #f39c12;
+            border-left: 4px solid;
         }
+        
+        /* Random border colors for application cards */
+        .application-card:nth-child(1) { border-left-color: #e74c3c; }
+        .application-card:nth-child(2) { border-left-color: #3498db; }
+        .application-card:nth-child(3) { border-left-color: #2ecc71; }
+        .application-card:nth-child(4) { border-left-color: #f39c12; }
+        .application-card:nth-child(5) { border-left-color: #9b59b6; }
+        .application-card:nth-child(6) { border-left-color: #1abc9c; }
+        .application-card:nth-child(7) { border-left-color: #d35400; }
+        .application-card:nth-child(8) { border-left-color: #34495e; }
         
         .application-card:hover {
             transform: translateY(-5px);
@@ -365,13 +375,39 @@
         .achievement-card {
             background-color: rgba(255,255,255,0.1);
             padding: 30px;
-            border-radius: 5px;
+            border-radius: 50%; /* Makes it circular */
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(243, 156, 18, 0.2),
+                rgba(243, 156, 18, 0.05)
+            );
+            transform: rotate(45deg);
+            z-index: 0;
         }
         
         .achievement-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.05);
             background-color: rgba(255,255,255,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         .achievement-number {
@@ -379,11 +415,21 @@
             font-weight: bold;
             color: #f39c12;
             margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
         }
         
         .achievement-title {
             font-size: 20px;
             margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .achievement-card p {
+            position: relative;
+            z-index: 1;
+            font-size: 14px;
         }
         
         .partners {
@@ -403,6 +449,90 @@
         
         .partner-logo:hover {
             filter: grayscale(0%) brightness(100%);
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 4px solid #f39c12;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .team-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 5px solid #f9f9f9;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-card h3 {
+            font-size: 22px;
+            color: #1a5276;
+            margin-bottom: 5px;
+        }
+        
+        .team-card .position {
+            color: #f39c12;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .team-card .experience {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .team-card .bio {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .team-social a {
+            color: #1a5276;
+            transition: all 0.3s;
+        }
+        
+        .team-social a:hover {
+            color: #f39c12;
+            transform: translateY(-3px);
         }
         
         /* Facility Section */
@@ -610,6 +740,11 @@
                 grid-template-columns: 1fr;
             }
             
+            .achievement-card {
+                width: 200px;
+                height: 200px;
+            }
+            
             .btn-group {
                 display: flex;
                 flex-direction: column;
@@ -624,6 +759,10 @@
             .video-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         
         @media (max-width: 480px) {
@@ -637,6 +776,39 @@
                 bottom: 20px;
                 right: 20px;
             }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .achievement-card {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .achievement-number {
+                font-size: 36px;
+            }
+            
+            .achievement-title {
+                font-size: 16px;
+            }
+        }
+        
+        /* Counting animation */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .counting {
+            animation: countUp 1s ease-out forwards;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -654,6 +826,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#applications">Applications</a></li>
+                    <li><a href="#team">Our Team</a></li>
                     <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -769,6 +942,74 @@
         </div>
     </section>
 
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Expert Team</h2>
+                <p style="color: #666; margin-top: 15px;">Meet the professionals behind our success</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Sharma">
+                    </div>
+                    <h3>Rajesh Sharma</h3>
+                    <div class="position">Technical Director</div>
+                    <div class="experience">15+ years in packaging technology</div>
+                    <div class="bio">Specializes in automated labeling systems and process optimization.</div>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel">
+                    </div>
+                    <h3>Priya Patel</h3>
+                    <div class="position">Operations Manager</div>
+                    <div class="experience">12+ years in production management</div>
+                    <div class="bio">Oversees all manufacturing operations and quality control.</div>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Vikram Mehta">
+                    </div>
+                    <h3>Vikram Mehta</h3>
+                    <div class="position">R&D Engineer</div>
+                    <div class="experience">10+ years in machine design</div>
+                    <div class="bio">Leads innovation in labeling machine technology and customization.</div>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anjali Desai">
+                    </div>
+                    <h3>Anjali Desai</h3>
+                    <div class="position">Customer Success Manager</div>
+                    <div class="experience">8+ years in client relations</div>
+                    <div class="bio">Ensures seamless implementation and satisfaction for all clients.</div>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Achievements Section -->
     <section class="achievements" id="achievements">
         <div class="container">
@@ -779,19 +1020,19 @@
             
             <div class="achievements-grid">
                 <div class="achievement-card">
-                    <div class="achievement-number">14+</div>
+                    <div class="achievement-number" id="states-count">0</div>
                     <div class="achievement-title">States Covered</div>
-                    <p>Our labeling solutions are operational across 14 Indian states</p>
+                    <p>Our labeling solutions are operational across Indian states</p>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-number">213+</div>
+                    <div class="achievement-number" id="clients-count">0</div>
                     <div class="achievement-title">Happy Clients</div>
-                    <p>We've served over 213 companies with our labeling solutions</p>
+                    <p>Companies served with our labeling solutions</p>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-number">3</div>
+                    <div class="achievement-number" id="partners-count">0</div>
                     <div class="achievement-title">Strategic Partnerships</div>
-                    <p>Collaborating with 3 major industry leaders for machine customization</p>
+                    <p>Collaborating with industry leaders for customization</p>
                 </div>
             </div>
             
@@ -960,5 +1201,41 @@
             <p style="margin-top: 10px; font-size: 12px; color: #aaa;">Innovating Labeling Solutions Since 2012</p>
         </div>
     </footer>
+
+    <script>
+        // Counting animation for achievements
+        function animateCount(elementId, finalNumber, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const startNumber = 0;
+            const increment = finalNumber / (duration / 16); // 60fps
+            
+            let currentNumber = startNumber;
+            const timer = setInterval(() => {
+                currentNumber += increment;
+                if (currentNumber >= finalNumber) {
+                    clearInterval(timer);
+                    currentNumber = finalNumber;
+                }
+                element.textContent = Math.floor(currentNumber);
+            }, 16);
+            
+            // Add animation class
+            element.classList.add('counting');
+        }
+        
+        // Only animate when achievements section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCount('states-count', 14);
+                    animateCount('clients-count', 213);
+                    animateCount('partners-count', 3);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(document.querySelector('.achievements'));
+    </script>
 </body>
 </html>
